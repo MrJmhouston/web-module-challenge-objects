@@ -29,67 +29,23 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
-{
-function createDiscountMenuItem(name, cost, category) {
-  let studentDiscount = 25;
-  
 
-  let studentCost = (studentDiscount / 100);
- 
 
-  let student = cost - studentCost * cost;
-
-  studentPurchase = { name, student, category };
-  
-  return studentPurchase;
+burger.discount = function(typeOfCustomer) {
+  if (typeOfCustomer === "teacher" || typeOfCustomer === "student") {
+    return burger.price - (burger.price * .25);
+  }
+  if (typeOfCustomer === "public") {
+    return burger.price - (burger.price * .1);
+  }
 }
-
-console.log(createDiscountMenuItem("Burger", "18", "Lunch"));
-}
-{
-function createDiscountMenuItem(name, cost, category) {
- 
-  let teacherDiscount = 25;
-
-
- 
-  let teacherCost = teacherDiscount / 100;
- 
-
- 
-  let teacher = cost - teacherCost * cost;
- 
+console.log(burger.discount("teacher"));
+console.log(burger.discount("public"));
+console.log(burger.discount("student"));
 
 
 
-  teacherPurchase = { name, teacher, category };
 
-  return teacherPurchase;
-}
-
-console.log(createDiscountMenuItem("Burger", "18", "Lunch"));
-}
-{
-function createDiscountMenuItem(name, cost, category) {
-  
-  
-  let lunchDiscount = 10;
-
-  
-  let publicCost = lunchDiscount / 100;
-
- 
-  let public = cost - publicCost * cost;
-
-  
-
-  publicPurchase = { name, public, category };
-
-  return publicPurchase;
-}
-
-console.log(createDiscountMenuItem("Burger", "18", "Lunch"));
-}
 ///////////////Reviews (MVP)///////////////////
 
 const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
